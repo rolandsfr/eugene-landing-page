@@ -13,20 +13,38 @@ import TopBar from "../components/TopBar/TopBar";
 import Slideshow from "../components/Slideshow/Slideshow";
 
 const TitlesBlock = styled.div`
+  margin-right: 4em;
+
   h1 {
-    max-width: 600px;
-    font-size: 3rem;
+    max-width: 500px;
+    font-size: 3.5rem;
     line-height: 1.2;
+    margin-top: 0;
   }
 
   p.subtitle {
     font-size: 1.2rem;
-    max-width: 390px;
-    margin-top: -1em;
+    max-width: 490px;
+    margin-top: -0.5em;
+    margin-bottom: 2em;
   }
 
   .buy-btn {
     text-transform: none;
+  }
+
+  @media only screen and (max-width: 959px) {
+    margin-right: 1em;
+  }
+
+  @media only screen and (max-width: 768px) {
+    margin: 2em 0;
+    margin-bottom: 3em;
+
+    p.subtitle {
+      margin-top: 1em;
+      margin-bottom: 2em;
+    }
   }
 `;
 
@@ -38,7 +56,40 @@ const Hero = styled.main`
   .container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 1024) {
+      img {
+        width: 250px;
+        display: none;
+      }
+    }
+
+    @media only screen and (max-width: 959px) {
+      img {
+        width: 250px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p.subtitle {
+        font-size: 1rem;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 424px) {
+    min-height: 70vh;
   }
 `;
 
@@ -64,7 +115,7 @@ const Home: NextPage = () => {
       <Hero>
         <Container className="container" fixed>
           <TitlesBlock>
-            <h1>Your Landing page name</h1>
+            <h1>Your Landing page title</h1>
             <p className="subtitle">
               Here is some text that provides additional information about the
               landing page itself.

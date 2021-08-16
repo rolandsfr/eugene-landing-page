@@ -26,8 +26,8 @@ a {
 }
 
 /* Overrides */
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .MuiContainer-fixed {
-    width: 85%;
+    width: 85% !important;
   }
 }

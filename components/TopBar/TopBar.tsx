@@ -28,6 +28,15 @@ const Navigation = styled.nav`
         text-transform: none !important;
       }
     }
+
+    @media only screen and (max-width: 425px) {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .wallet-btn {
+        margin-top: 1em;
+      }
+    }
   }
 `;
 
