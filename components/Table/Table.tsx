@@ -19,7 +19,7 @@ const StyledTableRow = withStyles((theme) =>
   })
 )(TableRow);
 
-const StyledTableCell = withStyles((theme: Theme) =>
+const StyledTableCell = withStyles((theme) =>
   createStyles({
     head: {
       backgroundColor: theme.palette.common.black,
@@ -41,7 +41,7 @@ const useStyles = makeStyles({
 });
 
 const TableContainerEl = styled.div`
-  margin-top: 3em;
+  margin-top: 4em;
 `;
 
 export interface TableData {
