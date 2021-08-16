@@ -11,6 +11,10 @@ import Button from "@material-ui/core/Button";
 // Custom components
 import TopBar from "../components/TopBar/TopBar";
 import Slideshow from "../components/Slideshow/Slideshow";
+import Table from "../components/Table/Table";
+
+// utils
+import { createTableData } from "../utils/utils";
 
 const TitlesBlock = styled.div`
   margin-right: 4em;
@@ -93,6 +97,24 @@ const Hero = styled.main`
   }
 `;
 
+const TablesSection = styled.section`
+  background: #fafafa;
+  padding: 5em 0;
+
+  h2 {
+    margin-top: -0.5em;
+    margin-bottom: -.5em;
+  }
+
+  @media only screen and (max-width: 768px) {
+    margin-top: 2em;
+
+     h2 {
+    margin-top: -1.7em;
+    margin-bottom: -1em;
+  }
+`;
+
 const images = [
   "/slideshow/1.png",
   "/slideshow/2.png",
@@ -101,6 +123,28 @@ const images = [
   "/slideshow/5.png",
   "/slideshow/6.png",
 ];
+
+const data_1 = createTableData({
+  headValues: ["Name", "Number", "Percentage"],
+  bodyValues: [
+    ["Ginger", "417", "(20.85%)"],
+    ["White ", "403", "(20.15%)"],
+    ["Black  ", "395", "(19.75%)"],
+    ["Blue", "395", "(19.75%)"],
+    ["Cream", "331", "(16.55%)"],
+  ],
+  tableTitle: "Coat color",
+});
+
+const data_2 = createTableData({
+  headValues: ["Name", "Number", "Percentage"],
+  bodyValues: [
+    ["None", "1000", "(50%)"],
+    ["Gloves", "808", "(40.4%)"],
+    ["Basket", "192", "(9.6%)"],
+  ],
+  tableTitle: "Shoes",
+});
 
 const Home: NextPage = () => {
   return (
@@ -132,6 +176,16 @@ const Home: NextPage = () => {
           <Slideshow images={images} interval={1} />
         </Container>
       </Hero>
+
+      <TablesSection>
+        <Container fixed>
+          <h2>Data blah blah...</h2>
+          <div className="tables">
+            <Table data={data_1} />
+            <Table data={data_2} />
+          </div>
+        </Container>
+      </TablesSection>
     </div>
   );
 };
